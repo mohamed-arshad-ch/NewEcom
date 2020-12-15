@@ -29,4 +29,4 @@ class VendorIndex(View):
             
         except Exception as e:
             print(e)
-            return HttpResponse(e)
+            return JsonResponse({'type':'success','message':e})
