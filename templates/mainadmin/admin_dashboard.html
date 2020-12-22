@@ -1,0 +1,1349 @@
+{% extends '../base.html' %}
+
+
+{% block content %}
+{% load static %}
+
+
+
+
+    <!-- breadcrumb start -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="page-title">
+                        <h2>Admin dashboard</h2>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Admin dashboard</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb End -->
+
+
+    <!--  dashboard section start -->
+    <section class="dashboard-section section-b-space">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="dashboard-sidebar">
+                        <div class="profile-top">
+                            <div class="profile-image">
+                                <img src="{% static 'images/logos/17.png' %}" alt="" class="img-fluid">
+                            </div>
+                            <div class="profile-detail">
+                                <h5>Fashion Store</h5>
+                                <h6>750 followers | 10 review</h6>
+                                <h6>mark.enderess@mail.com</h6>
+                            </div>
+                        </div>
+                        <div class="faq-tab">
+                            <ul class="nav nav-tabs" id="top-tab" role="tablist">
+                                <li class="nav-item"><a data-toggle="tab" class="nav-link active"
+                                        href="#dashboard">dashboard</a></li>
+                                <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#products">products</a>
+                                </li>
+                                <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#orders">orders</a>
+                                </li>
+                                <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#profile">profile</a>
+                                </li>
+                                <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#settings">settings</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#logout"
+                                        href="#">logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="faq-content tab-content" id="top-tabContent">
+                        <div class="tab-pane fade show active" id="dashboard">
+                            <div class="counter-section">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="counter-box">
+                                            <img src="{% static 'images/icon/dashboard/order.png' %}" class="img-fluid">
+                                            <div>
+                                                <h3>25</h3>
+                                                <h5>total products</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="counter-box">
+                                            <img src="{% static 'images/icon/dashboard/sale.png' %}" class="img-fluid">
+                                            <div>
+                                                <h3>12500</h3>
+                                                <h5>total sales</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="counter-box">
+                                            <img src="{% static 'images/icon/dashboard/homework.png' %}"
+                                                class="img-fluid">
+                                            <div>
+                                                <h3>50</h3>
+                                                <h5>order pending</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div id="chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div id="chart-order"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="card dashboard-table">
+                                        <div class="card-body">
+                                            <h3>trending products</h3>
+                                            <table class="table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">image</th>
+                                                        <th scope="col">product name</th>
+                                                        <th scope="col">price</th>
+                                                        <th scope="col">sales</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row"><img
+                                                                src="{% static 'images/dashboard/product/1.jpg' %}"
+                                                                class="blur-up lazyloaded"></th>
+                                                        <td>neck velvet dress</td>
+                                                        <td>$205</td>
+                                                        <td>1000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"><img
+                                                                src="{% static 'images/dashboard/product/9.jpg' %}"
+                                                                class="blur-up lazyloaded"></th>
+                                                        <td>belted trench coat</td>
+                                                        <td>$350</td>
+                                                        <td>800</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"><img src="{% static 'images/pro3/34.jpg' %}"
+                                                                class="blur-up lazyloaded"></th>
+                                                        <td>man print tee</td>
+                                                        <td>$150</td>
+                                                        <td>750</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card dashboard-table">
+                                        <div class="card-body">
+                                            <h3>recent orders</h3>
+                                            <table class="table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">order id</th>
+                                                        <th scope="col">product details</th>
+                                                        <th scope="col">status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">#21515</th>
+                                                        <td>neck velvet dress</td>
+                                                        <td>confrimed</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#78153</th>
+                                                        <td>belted trench coat</td>
+                                                        <td>shipped</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#51512</th>
+                                                        <td>man print tee</td>
+                                                        <td>pending</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#78153</th>
+                                                        <td>belted trench coat</td>
+                                                        <td>shipped</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#51512</th>
+                                                        <td>man print tee</td>
+                                                        <td>pending</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="products">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card dashboard-table mt-0">
+                                        <div class="card-body">
+                                            <div class="top-sec">
+                                                <h3>all products</h3>
+
+                                                <a data-toggle="modal" data-target="#addproductcategory" href="#"
+                                                    class="btn btn-sm btn-solid">add Category</a>
+                                                &nbsp;&nbsp;
+                                                <div>
+                                                    <button type="button" id="activeproducts"
+                                                        class="btn btn-sm btn-solid">Active Products</button>
+                                                </div>
+                                            </div>
+                                            <table class="table-responsive-md table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <input type="checkbox" name="checkall" id="checkall">
+                                                        </th>
+                                                        <th scope="col">image</th>
+                                                        <th scope="col">product name</th>
+                                                        <th scope="col">category</th>
+                                                        <th scope="col">price</th>
+
+                                                        <th scope="col">tax</th>
+                                                        <th scope="col">More</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    {% for products in product %}
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <input type="checkbox" value="{{products.id}}"
+                                                                data-checkdata="{{products.id}}" name="checkproduct"
+                                                                id="checkproduct">
+                                                        </th>
+                                                        <th scope="row"><img src="{% static 'img' %}/{{products.image}}"
+                                                                class="blur-up lazyloaded"></th>
+                                                        <td>{{products.name}}</td>
+                                                        <td>{{products.category.name}}</td>
+                                                        <td>{{products.price}}</td>
+
+                                                        <td>{{products.tax}}%</td>
+                                                        <td><button id="productdetails-btn"
+                                                                data-productid="{{products.id}}" data-toggle="modal"
+                                                                data-target="#productdetails" class="btn btn-primary"><i
+                                                                    class="fa fa-pencil-square-o mr-1"
+                                                                    aria-hidden="true"></i></button></td>
+                                                    </tr>
+                                                    {% endfor %}
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="orders">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card dashboard-table mt-0">
+                                        <div class="card-body">
+                                            <div class="top-sec">
+                                                <h3>orders</h3>
+                                                <a href="#" class="btn btn-sm btn-solid">add product</a>
+                                            </div>
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">order id</th>
+                                                        <th scope="col">product details</th>
+                                                        <th scope="col">status</th>
+                                                        <th scope="col">price</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">#125021</th>
+                                                        <td>neck velvet dress</td>
+                                                        <td>shipped</td>
+                                                        <td>$205</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#521214</th>
+                                                        <td>belted trench coat</td>
+                                                        <td>shipped</td>
+                                                        <td>$350</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#521021</th>
+                                                        <td>men print tee</td>
+                                                        <td>pending</td>
+                                                        <td>$150</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#245021</th>
+                                                        <td>woman print tee</td>
+                                                        <td>shipped</td>
+                                                        <td>$150</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#122141</th>
+                                                        <td>men print tee</td>
+                                                        <td>canceled</td>
+                                                        <td>$150</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#125015</th>
+                                                        <td>men print tee</td>
+                                                        <td>pending</td>
+                                                        <td>$150</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#245021</th>
+                                                        <td>woman print tee</td>
+                                                        <td>shipped</td>
+                                                        <td>$150</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#122141</th>
+                                                        <td>men print tee</td>
+                                                        <td>canceled</td>
+                                                        <td>$150</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#125015</th>
+                                                        <td>men print tee</td>
+                                                        <td>pending</td>
+                                                        <td>$150</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card mt-0">
+                                        <div class="card-body">
+                                            <div class="dashboard-box">
+                                                <div class="dashboard-title">
+                                                    <h4>profile</h4>
+                                                    <span data-toggle="modal" data-target="#edit-profile">edit</span>
+                                                </div>
+                                                <div class="dashboard-detail">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>company name</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>Fashion Store</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>email address</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>mark.enderess@mail.com</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>Country / Region</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>Downers Grove, IL</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>Year Established</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>2018</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>Total Employees</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>101 - 200 People</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>category</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>clothing</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>street address</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>549 Sulphur Springs Road</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>city/state</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>Downers Grove, IL</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="details">
+                                                                <div class="left">
+                                                                    <h6>zip</h6>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <h6>60515</h6>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="settings">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card mt-0">
+                                        <div class="card-body">
+                                            <div class="dashboard-box">
+                                                <div class="dashboard-title">
+                                                    <h4>settings</h4>
+                                                </div>
+                                                <div class="dashboard-detail">
+                                                    <div class="account-setting">
+                                                        <h5>Notifications</h5>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios"
+                                                                        id="exampleRadios1" value="option1" checked>
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios1">
+                                                                        Allow Desktop Notifications
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios"
+                                                                        id="exampleRadios2" value="option2">
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios2">
+                                                                        Enable Notifications
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios"
+                                                                        id="exampleRadios3" value="option3">
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios3">
+                                                                        Get notification for my own activity
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios"
+                                                                        id="exampleRadios4" value="option4">
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios4">
+                                                                        DND
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-setting">
+                                                        <h5>deactivate account</h5>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios1"
+                                                                        id="exampleRadios4" value="option4" checked>
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios4">
+                                                                        I have a privacy concern
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios1"
+                                                                        id="exampleRadios5" value="option5">
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios5">
+                                                                        This is temporary
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios1"
+                                                                        id="exampleRadios6" value="option6">
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios6">
+                                                                        other
+                                                                    </label>
+                                                                </div>
+                                                                <button type="button"
+                                                                    class="btn btn-solid btn-xs">Deactivate
+                                                                    Account</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-setting">
+                                                        <h5>Delete account</h5>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios3"
+                                                                        id="exampleRadios7" value="option7" checked>
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios7">
+                                                                        No longer usable
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios3"
+                                                                        id="exampleRadios8" value="option8">
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios8">
+                                                                        Want to switch on other account
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="radio_animated form-check-input"
+                                                                        type="radio" name="exampleRadios3"
+                                                                        id="exampleRadios9" value="option9">
+                                                                    <label class="form-check-label"
+                                                                        for="exampleRadios9">
+                                                                        other
+                                                                    </label>
+                                                                </div>
+                                                                <button type="button"
+                                                                    class="btn btn-solid btn-xs">Delete Account</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  dashboard section end -->
+
+
+    <!-- Modal start -->
+    <div class="modal logout-modal fade" id="logout" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Logging Out</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to log out?
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-dark btn-custom" data-dismiss="modal">no</a>
+                    <a href="index.html" class="btn btn-solid btn-custom">yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal end -->
+
+
+    <!-- footer start -->
+
+
+
+    <!-- tap to top -->
+    <div class="tap-top">
+        <div>
+            <i class="fa fa-angle-double-up"></i>
+        </div>
+    </div>
+    <!-- tap to top End -->
+
+
+    <!-- theme setting -->
+    <a href="javascript:void(0)" onclick="openSetting()">
+        <div class="setting-sidebar" id="setting-icon">
+            <div>
+                <i class="fa fa-cog" aria-hidden="true"></i>
+            </div>
+        </div>
+    </a>
+    <div id="setting_box" class="setting-box">
+        <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>
+        <div class="setting_box_body">
+            <div onclick="closeSetting()">
+                <div class="sidebar-back text-left"><i class="fa fa-angle-left pr-2" aria-hidden="true"></i> Back</div>
+            </div>
+            <div class="setting-body">
+                <div class="setting-title">
+                    <h4>layout</h4>
+                </div>
+                <div class="setting-contant">
+                    <div class="row demo-section">
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo1"></div>
+                                <div class="demo-text">
+                                    <h4>Fashion</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('index.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo43">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>game</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('game.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo44">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>gym</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('gym-product.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo45">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>tools</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('tools.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo46">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>marijuana</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('marijuana.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo47">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>metro</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('metro.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo48">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>pets</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('pets.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo49">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>video slider</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('video-slider.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo50">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>left menu</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('left_sidebar-demo.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo51">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>jewellery</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('jewellery.html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo2"></div>
+                                <div class="demo-text">
+                                    <h4>Fashion</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('fashion-2.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo3"></div>
+                                <div class="demo-text">
+                                    <h4>Fashion</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('fashion-3.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo4"></div>
+                                <div class="demo-text">
+                                    <h4>Shoes</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('shoes.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo5"></div>
+                                <div class="demo-text">
+                                    <h4>Bags</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('bags.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo6"></div>
+                                <div class="demo-text">
+                                    <h4>Watch</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('watch.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo7"></div>
+                                <div class="demo-text">
+                                    <h4>Kids</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('kids.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo8"></div>
+                                <div class="demo-text">
+                                    <h4>Flower</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('flower.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo9"></div>
+                                <div class="demo-text">
+                                    <h4>Nursery</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('nursery.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo10"></div>
+                                <div class="demo-text">
+                                    <h4>Vegetables</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('vegetables.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo11"></div>
+                                <div class="demo-text">
+                                    <h4>Beauty</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('beauty.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo12"></div>
+                                <div class="demo-text">
+                                    <h4>Instagram Shop</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('instagram-shop.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects effect-2">
+                            <div class="set-position">
+                                <div class="layout-container demo13"></div>
+                                <div class="demo-text">
+                                    <h4>Lookbook</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('lookbook-demo.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo14"></div>
+                                <div class="demo-text">
+                                    <h4>Light</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('light.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo15"></div>
+                                <div class="demo-text">
+                                    <h4>Full Page</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('full-page.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo16"></div>
+                                <div class="demo-text">
+                                    <h4>Electronic-1</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('electronic-1.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo17"></div>
+                                <div class="demo-text">
+                                    <h4>Electronic-2</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('electronic-2.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects effect-2">
+                            <div class="set-position">
+                                <div class="layout-container demo18"></div>
+                                <div class="demo-text">
+                                    <h4>Video</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('video.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo19"></div>
+                                <div class="demo-text">
+                                    <h4>Goggles</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('goggles.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects mb-0">
+                            <div class="set-position">
+                                <div class="layout-container demo20"></div>
+                                <div class="demo-text">
+                                    <h4>Parallax</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('parallax.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects mb-0">
+                            <div class="set-position">
+                                <div class="layout-container demo21"></div>
+                                <div class="demo-text">
+                                    <h4>Furniture</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('furniture.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-title">
+                    <h4>shop</h4>
+                </div>
+                <div class="setting-contant">
+                    <div class="row demo-section">
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo22"></div>
+                                <div class="demo-text">
+                                    <h4>left sidebar</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo24"></div>
+                                <div class="demo-text">
+                                    <h4>right sidebar</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(right).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo23"></div>
+                                <div class="demo-text">
+                                    <h4>no sidebar</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(no-sidebar).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo25"></div>
+                                <div class="demo-text">
+                                    <h4>popup</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(sidebar-popup).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo52">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>metro</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(metro).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo53">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>full width</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(full-width).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo26"></div>
+                                <div class="demo-text">
+                                    <h4>infinite scroll</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(infinite-scroll).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo54"></div>
+                                <div class="demo-text">
+                                    <h4>three grid</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(3-grid).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects mb-0">
+                            <div class="set-position">
+                                <div class="layout-container demo55"></div>
+                                <div class="demo-text">
+                                    <h4>six grid</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(6-grid).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects mb-0">
+                            <div class="set-position">
+                                <div class="layout-container demo56"></div>
+                                <div class="demo-text">
+                                    <h4>list view</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('category-page(list-view).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-title">
+                    <h4>product</h4>
+                </div>
+                <div class="setting-contant">
+                    <div class="row demo-section">
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo40">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>four image </h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(4-image).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo33"></div>
+                                <div class="demo-text">
+                                    <h4>left sidebar</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page.html')"
+                                            class="btn new-tab-btn">Preview</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo36"></div>
+                                <div class="demo-text">
+                                    <h4>right sidebar</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(right-sidebar).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo34"></div>
+                                <div class="demo-text">
+                                    <h4>no sidebar</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(no-sidebar).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo41">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>bundle</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(bundle).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo42">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>image swatch</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(image-swatch).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo32"></div>
+                                <div class="demo-text">
+                                    <h4>left image</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(left-image).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo35"></div>
+                                <div class="demo-text">
+                                    <h4>right image</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(right-image).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo31">
+                                    <div class="ribbon-1"><span>n</span><span>e</span><span>w</span></div>
+                                </div>
+                                <div class="demo-text">
+                                    <h4>image outside</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(image-outside).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo27"></div>
+                                <div class="demo-text">
+                                    <h4>3-col left</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(3-col-left).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo28"></div>
+                                <div class="demo-text">
+                                    <h4>3-col right</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(3-col-right).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo29"></div>
+                                <div class="demo-text">
+                                    <h4>3-col bottom</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(3-column).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo37"></div>
+                                <div class="demo-text">
+                                    <h4>sticky</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(sticky).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects">
+                            <div class="set-position">
+                                <div class="layout-container demo30"></div>
+                                <div class="demo-text">
+                                    <h4>accordian</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(accordian).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12 text-center demo-effects mb-0">
+                            <div class="set-position">
+                                <div class="layout-container demo38"></div>
+                                <div class="demo-text">
+                                    <h4>vertical tab</h4>
+                                    <div class="btn-group demo-btn" role="group" aria-label="Basic example"> <button
+                                            type="button" onClick="window.open('product-page(vertical-tab).html')"
+                                            class="btn new-tab-btn">Preview</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-title">
+                    <h4>color picker</h4>
+                </div>
+                <div class="setting-contant">
+                    <ul class="color-box">
+                        <li>
+                            <input id="ColorPicker1" type="color" value="#ff4c3b" name="Background">
+                            <span>theme deafult color</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="setting-title">
+                    <h4>RTL</h4>
+                </div>
+                <div class="setting-contant">
+                    <ul class="setting_buttons">
+                        <li class="active" id="ltr_btn"><a href="javascript:void(0)" class="btn setting_btn">LTR</a>
+                        </li>
+                        <li id="rtl_btn"><a href="javascript:void(0)" class="btn setting_btn">RTL</a></li>
+                    </ul>
+                </div>
+                <div class="buy_btn">
+                    <a href="https://themeforest.net/item/multikart-responsive-ecommerce-html-template/22809967?s_rank=1"
+                        target="_blank" class="btn btn-block purchase_btn"><i class="fa fa-shopping-cart"
+                            aria-hidden="true"></i> purchase Multikart now!</a>
+                    <a href="https://themeforest.net/item/multikart-responsive-angular-ecommerce-template/22905358?s_rank=3"
+                        target="_blank" class="btn btn-block purchase_btn"><img src="../assets/images/icon/angular.png"
+                            alt="" class="img-fluid"> Multikart Angular</a>
+                    <a href="https://themeforest.net/item/multikart-responsive-react-ecommerce-template/23067773?s_rank=2"
+                        target="_blank" class="btn btn-block purchase_btn"><img src="../assets/images/icon/react.png"
+                            alt="" class="img-fluid"> Multikart React</a>
+                    <a href="https://themeforest.net/item/multikart-multipurpose-shopify-sections-theme/23093831?s_rank=1"
+                        target="_blank" class="btn btn-block purchase_btn"><img src="../assets/images/icon/shopify.png"
+                            alt="" class="img-fluid"> Multikart Shopify</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock content %}
